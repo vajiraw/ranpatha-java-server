@@ -30,6 +30,27 @@ public class BusinessSearchRepositoryImpl implements BusinessSearchRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	@Override
+	public List<Company> findAllCategories() {		
+			
+		   Query query = new Query();		   
+		   List<Company>  companies = mongoTemplate.find(query, Company.class);		   
+		   
+		   Map<String,Company> map = new HashMap<String,Company>();   		   
+		   companies.forEach(company ->
+		   					{		   					
+		   					 map.put(company.getCategory(), company);});
+		   
+		   List<Company> lstCompany =  new ArrayList<Company>();
+		   
+		   map.forEach((k,v)->{ lstCompany.add(v);});		   
+		   return lstCompany;
+		   
+		   //return (List<Company>) mongoTemplate.findOne(query, Company.class);
+	}
+	
 
 	@Override
 	public List<Company> findSubCategoryByCategoryName(String category) {
@@ -49,8 +70,30 @@ public class BusinessSearchRepositoryImpl implements BusinessSearchRepository{
 		   
 		   map.forEach((k,v)->{ lstCompany.add(v);});		   
 		   return lstCompany;
+		   		   
+	}
+	
+	
+	@Override
+	public List<Company> findCompniesforSubCategory(String category,String subCategory) {
+			System.out.println("category to get sub categories:: "+category + "sub category "+subCategory);
+			
+		   Query query = new Query();
+		   query.addCriteria(Criteria.where("category").is(category));
+		   query.addCriteria(Criteria.where("subCategory").is(subCategory));
+		   List<Company>  companies = mongoTemplate.find(query, Company.class);
 		   
-		   //return (List<Company>) mongoTemplate.findOne(query, Company.class);
+		   
+		   //Map<String,Company> map = new HashMap<String,Company>();   		   
+		  /* companies.forEach(company ->
+		   					{		   					
+		   					 map.put(company.getSubCategory(), company);});
+		   
+		   List<Company> lstCompany =  new ArrayList<Company>();*/
+		   
+		  // map.forEach((k,v)->{ lstCompany.add(v);});		   
+		   return companies;
+		   		   
 	}
 	
 	

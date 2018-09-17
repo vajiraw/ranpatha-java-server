@@ -12,6 +12,8 @@ public interface BusinessSearchRepository  { //extends MongoRepository<Company, 
 	 public Company findByName(String firstName);
 	 public List<Company> findDistinctSubCategoryByCategory(String category);
 	 public List<Company> findSubCategoryByCategoryName(String category);
+	List<Company> findAllCategories();
+	List<Company> findCompniesforSubCategory(String category, String subCategory);
 	 
 	 //public List<Customer> findByLastName(String lastName);
 	 

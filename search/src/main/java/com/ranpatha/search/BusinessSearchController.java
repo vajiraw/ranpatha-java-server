@@ -19,11 +19,28 @@ public class BusinessSearchController {
 	@Autowired
 	private BusinessSearchRepository businessSearchRepo;
 	
-	@GetMapping("/getSubcategories/{category}")
-	public List getCategories(@PathVariable("category") String category){
-		List<Company> abc = businessSearchRepo.findSubCategoryByCategoryName(category);
-		System.out.println("size is :: "+abc.size());
+	@GetMapping("/getcategories")
+	public List<Company> getCategories(){
+		List<Company> abc = businessSearchRepo.findAllCategories();
+		System.out.println("Categories size is :: "+abc.size());
 		return abc;
 	}
+	
+	@GetMapping("/getSubcategories/{category}")
+	public List getSubCategoryforCategoryCategories(@PathVariable("category") String category){
+		List<Company> abc = businessSearchRepo.findSubCategoryByCategoryName(category);
+		System.out.println("SubCategories size is :: "+abc.size());
+		return abc;
+	}
+	
+	@GetMapping("/{category}/getCompany/{subCategory}")
+	public List getCompaniesforSubCategory(@PathVariable("category") String category,@PathVariable("subCategory") String subCategory){
+		List<Company> abc = businessSearchRepo.findCompniesforSubCategory(category, subCategory);
+		System.out.println("SubCategories size is :: "+abc.size());
+		return abc;
+	}
+	
+	
+	
 
 }

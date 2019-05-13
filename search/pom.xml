@@ -5,8 +5,8 @@
 
 	<groupId>com.ranpatha</groupId>
 	<artifactId>search</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	
+	<packaging>war</packaging>
 
 	<name>search</name>
 	<description>Demo project for Spring Boot</description>
@@ -25,18 +25,78 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<!--<dependency>
+	
+		<!-- <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency> -->
+        
+        <!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency> -->
+		
+		<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-lang3</artifactId>
+  <version>3.8.1</version>
+</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        
+         <!-- <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+		 </dependency> -->
+		<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+</dependency>
+
+<dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-context-support</artifactId>
+   
+</dependency>
+
+<dependency>
+	<groupId>org.thymeleaf.extras</groupId>
+	<artifactId>thymeleaf-extras-springsecurity4</artifactId>	
+	<version>2.1.2.RELEASE</version>
+  </dependency>
+  
+	  <!-- <dependency>
+	   <groupId>org.springframework.boot</groupId>
+	   <artifactId>spring-boot-starter-tomcat</artifactId>
+	   <scope>provided</scope>
+	</dependency> -->
+		
+		<!-- <dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-ehcache</artifactId>
+    		<version>5.2.2.Final</version>
+		</dependency> -->
+		
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -52,6 +112,43 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.1.4.RELEASE</version>
+		</dependency>
+
+        <!-- Use MySQL Connector-J -->
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>com.google.code.gson</groupId>
+    		<artifactId>gson</artifactId>
+    		<version>2.7</version>
+		</dependency>
+        
+		
 	</dependencies>
 
 	<build>
